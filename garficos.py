@@ -95,10 +95,14 @@ def save_two_panel(Ml, El, lbl_l, Mr, Er, lbl_r,
     bcs = grouped_bars(ax1, Ml, El, lbl_l, colors)
     ax1.set_ylim(0, ylim_top)
     ax1.set_ylabel(ylabel)
+    ax1.text(0.03, 0.97, '(a)', transform=ax1.transAxes,
+             va='top', ha='left', fontsize=9, fontweight='bold')
 
     grouped_bars(ax2, Mr, Er, lbl_r, colors)
     ax2.set_ylim(0, ylim_top)
     ax2.set_ylabel(ylabel)
+    ax2.text(0.03, 0.97, '(b)', transform=ax2.transAxes,
+             va='top', ha='left', fontsize=9, fontweight='bold')
 
     fig.legend([bcs[0][0], bcs[1][0]], LEG,
                loc='upper center', ncol=2, frameon=False,
